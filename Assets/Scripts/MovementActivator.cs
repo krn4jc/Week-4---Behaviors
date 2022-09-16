@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class MovementActivator : MonoBehaviour
 {
+    float moveSpeed;
+
+
     [SerializeField] GameObject objectToActivate;
 
     // Start is called before the first frame update
@@ -16,5 +19,9 @@ public class MovementActivator : MonoBehaviour
     void Update()
     {
         
+    }
+
+    private void OnTriggerEnter(Collider other){
+        objectToActivate.GetComponent<MoveObject>().enabled = true;
     }
 }
